@@ -1755,6 +1755,8 @@ body {
   }
 }
 
+/* header arama çubuğu */
+
 .header-search {
   display: inline-flex;
   align-items: center;
