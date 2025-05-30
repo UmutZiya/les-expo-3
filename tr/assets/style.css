@@ -912,6 +912,14 @@ ul {
   line-height: 1.5;
 }
 
+.contact-info {
+  text-align: start;
+}
+
+.address{
+  text-align: start;
+}
+
 .contact-info p {
   margin-bottom: 8px;
   font-size: 14px;
