@@ -868,6 +868,41 @@ ul {
   width: 15px;
 }
 
+/* Follow Us Text */
+.follow-us {
+  color: var(--primarycolor);
+  font-size: 16px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+/* Social Icons Footer */
+.social-icons-footer {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icons-footer a {
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icons-footer a:hover {
+  color: var(--primarycolor);
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
 /* Links Section */
 .footer-links {
   width: 75%;
