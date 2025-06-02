@@ -705,26 +705,24 @@ ul {
   animation: slide 20s linear infinite;
 }
 
-.logo-slider-container:hover {
-  animation-play-state: paused;
-}
-
 .logo-slide {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
   width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   flex-shrink: 0;
 }
 
 .logo-link {
-  display: block;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0 25px;
-  max-width: 220px;
   text-decoration: none;
   color: inherit;
   transition: all 0.3s;
+  flex: 1;
+  max-width: 310px;
 }
 
 .logo-img-container {
@@ -733,13 +731,16 @@ ul {
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
+  width: 100%;
 }
 
 .logo-img-slider {
-  width: 310px;
-  height: 150px;
+  max-width: 100%;
+  height: auto;
+  max-height: 150px;
   filter: grayscale(100%);
   transition: all 0.3s;
+  object-fit: contain;
 }
 
 .logo-link:hover .logo-img {
@@ -758,7 +759,6 @@ ul {
   0% {
     transform: translateX(0);
   }
-
   100% {
     transform: translateX(-50%);
   }
@@ -778,96 +778,34 @@ ul {
 
 @media (max-width: 768px) {
   .logo-slider {
-    /* Add padding if needed so only one logo appears centered */
-    padding: 40px 0;
-    /* Keep vertical padding */
+    padding: 20px 0;
   }
 
   .logo-slider-container {
-    /* Original structure: 2 slides, total width 200% */
-    /* We have 4 logos per slide */
-    /* To show 1 logo out of 4 per slide, each logo takes 1/4 of the viewport */
-    /* Container needs to be 4 * 100% = 400% wide to hold one slide's logos */
-    /* With the duplicate slide for looping, total width = 800% */
-    width: 800%;
-    /* Animation: 4 steps per original slide content. 12s => 3s per logo */
-    animation: slide-mobile 12s steps(4, end) infinite;
-  }
-
-  @keyframes slide-mobile {
-    0% {
-      transform: translateX(0%);
-    }
-
-    100% {
-      /* Slide by the width of the first 4 logos = 4 * 100% viewport = 400% viewport */
-      /* Container is 800% wide, so move by 400/800 = 50% */
-      transform: translateX(-50%);
-    }
+    width: 200%;
   }
 
   .logo-slide {
-    /* Each slide originally held 4 logos. Now it should span 400% viewport */
-    /* Relative to 800% container, each slide is 50% wide */
     width: 50%;
-    /* Align logos to the start within the slide */
-    justify-content: flex-start;
+    justify-content: space-evenly;
+    gap: 10px;
   }
 
   .logo-link {
-    /* Each logo should occupy 100% viewport width */
-    /* Parent .logo-slide is 400% viewport width. Each link is 1/4 of parent */
-    width: 25%;
-    /* Center the logo within its 100% viewport slot */
-    display: flex;
-    /* Use flex to center content */
-    justify-content: center;
-    /* Center horizontally */
-    align-items: center;
-    /* Center vertically */
-    padding: 0;
-    /* Remove previous padding */
-    max-width: none;
-    /* Remove max-width */
-    flex-shrink: 0;
-    /* Prevent shrinking */
+    padding: 0 10px;
+    max-width: 200px;
   }
 
   .logo-img-container {
-    /* Adjust container size if needed */
     height: 80px;
-    /* Example height */
-    margin-bottom: 0;
-    /* Remove margin if text is hidden */
   }
 
-  .logo-img {
-    height: 60px;
-    /* Example height */
-    width: auto;
-    /* Maintain aspect ratio */
-    max-width: 80%;
-    /* Limit width within the link area */
-    filter: grayscale(100%);
-    /* Keep filter or remove */
+  .logo-img-slider {
+    max-height: 70px;
   }
-
-
 
   .logo-text {
     display: none;
-    /* Hide text on mobile */
-  }
-
-  /* Keep animation running on hover */
-  .logo-slider-container:hover {
-    animation-play-state: running;
-  }
-
-  /* Disable image hover effect on mobile */
-  .logo-link:hover .logo-img {
-    filter: grayscale(100%);
-    transform: scale(1);
   }
 }
 

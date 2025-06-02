@@ -2,14 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-translate="title">LESEXPO</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <!-- Css -->
     <link rel="stylesheet" href="./assets/style.css">
-    <link rel="stylesheet" href="./assets/on-kayit-formu.css">
     <link rel="stylesheet" href="./assets/online-bilet.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -79,7 +78,7 @@
                     </div>
                     <a href="online-bilet.html" class="trigger-button">Onlıne Bilet</a>
                     <a href="#" class="active" data-lang="tr" data-translate="lang.tr">TR</a> | <a
-                        href="../en/pre-registration-form.html" class="" data-lang="en" data-translate="lang.en">EN</a>
+                        href="../en/online-ticket.html" class="" data-lang="en" data-translate="lang.en">EN</a>
                 </div>
                 <!-- nav-toggle-button class'ı menüyü açar -->
 
@@ -97,13 +96,13 @@
     <div class="fullscreen-menu">
         <div class="menu-header">
             <a href="index.html" class="logo-menu">
-                <img src="./images/lesexpologo-inter.png" alt="Rising City & Yapı ve Yaşam Fuarı Logo" class="fs-2">
+                <img src="./images/lesexpologo-inter.png" alt="" class="fs-2">
             </a>
             <div class="menu-header-actions-fs">
                 <div class="lang-switch">
                     <a href="online-bilet.html" class="trigger-button">Online Bilet</a>
                     <a href="#" class="active" data-lang="tr" data-translate="lang.tr">TR</a> | <a
-                        href="../en/pre-registration-form.html" class="" data-lang="en" data-translate="lang.en">EN</a>
+                        href="../en/online-ticket.html" class="" data-lang="en" data-translate="lang.en">EN</a>
                 </div>
                 <button class="close-menu-btn" aria-label="Menüyü Kapat">
                     <i class="fas fa-times"></i>
@@ -153,8 +152,8 @@
                 <ul>
                     <li><a href="medya-logo.html">Logo</a></li>
                     <li><a href="tum-haberler.html">Haberler</a></li>
-                    <li><a href="galeri.html">Galeri</a></li>
-                    <li><a href="kurumsal-kimlik.html">Kurumsal Kimlik</a></li>
+                    <li><a href="#">Galeri</a></li>
+                    <li><a href="#">Kurumsal Kimlik</a></li>
                 </ul>
             </div>
 
@@ -293,7 +292,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="markalarinizGiriniz">Markalarınızı Giriniz *</label>
+                                <label for="markalarinizGiriniz">Markalarınız Giriniz *</label>
                                 <input type="text" class="form-control" id="markalarinizGiriniz" required>
                             </div>
                         </div>
@@ -307,6 +306,40 @@
 
                     <!-- Sixth Row -->
                     <div class="row mb-4">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Firmanızı Ziyaret Etmemizi İster Misiniz? *</label>
+                                <div class="radio-group">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="ziyaret" id="ziyaretEvet"
+                                            value="evet" required>
+                                        <label class="form-check-label" for="ziyaretEvet">Evet</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="ziyaret" id="ziyaretHayir"
+                                            value="hayir">
+                                        <label class="form-check-label" for="ziyaretHayir">Hayır</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Fuar Katılım Hakkında Ayrıntılı Bilgi *</label>
+                                <div class="radio-group-form">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="katilim"
+                                            id="katilimIstiyorum" value="istiyorum" required>
+                                        <label class="form-check-label" for="katilimIstiyorum">İstiyorum</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="katilim"
+                                            id="katilimIstemiyorum" value="istemiyorum">
+                                        <label class="form-check-label" for="katilimIstemiyorum">İstemiyorum</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="kurulusTarihi">Firmanızın Kuruluş Tarihi *</label>
@@ -415,7 +448,7 @@
                     </div>
 
                     <!-- Certificates Section -->
-                    <!-- <div class="section-title mb-3">Sertifikalarınız Ve Ödülleriniz</div>
+                    <div class="section-title mb-3">Sertifikalarınız Ve Ödülleriniz</div>
                     <div id="certificatesContainer">
                         <div class="form-row-container">
                             <div class="row mb-4 certificate-row">
@@ -437,23 +470,31 @@
                         <div class="col-12 text-end">
                             <button type="button" class="btn btn-dark" id="addCertificate">Yeni Ekle</button>
                         </div>
-                    </div> -->
+                    </div>
 
                     <!-- Terms and Captcha -->
-                    <div class="form-section-ob">
-                        <div class="form-group-ob checkbox-group-ob">
-                            <input type="checkbox" id="terms" name="terms" required>
-                            <label for="terms">Aydınlatma Metni ve Kişisel Verilerin Kullanılması ve Korunması ile
-                                ilgili bilgilendirme yazısını okudum, kabul ediyorum. <span
-                                    class="required-ob">*</span></label>
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                                <label class="form-check-label" for="termsCheck">
+                                    Aydınlatma Metni ve Kişisel Verilerin Kullanılması ve Korunması ile ilgili
+                                    bilgilendirme yazısını okudum, kabul ediyorum.
+                                </label>
+                            </div>
                         </div>
                     </div>
 
                     <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="captcha-container">
 
+
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             <div class="input-group">
-
+                                <input type="text" class="form-control" placeholder="KODU GİRİNİZ" required>
                                 <button class="btn btn-primary" type="submit">Hemen Yerinizi Ayırtın</button>
                             </div>
                         </div>
@@ -521,9 +562,10 @@
                     </div>
                     <p class="address">Yeşilköy Istanbul, Fuar Merkezi, 34149 Bakırköy/İstanbul</p>
                     <div class="contact-info">
-                        <p><i class="fas fa-phone"></i>0216 526 44 64</p>
-                        <p><i class="fas fa-fax"></i> 0216 526 44 66</p>
-                        <p><i class="fas fa-envelope"></i> lesexpo@kfa.com.tr</p>
+                        <p><i class="fas fa-phone"></i>+90 594 458 56 10</p>
+                        <p><i class="fas fa-phone"></i>+90 549 458 77 16</p>
+                        <p><i class="fas fa-phone"></i>+90 549 458 01 34</p>
+                        <p><i class="fas fa-envelope"></i>info@les-expo.com</p>
                     </div>
                 </div>
 
@@ -560,10 +602,10 @@
                     <div class="footer-column">
                         <h3>ETKİNLİKLER</h3>
                         <ul>
-                            <li><a href="#">B2B Toplantıları</a></li>
-                            <li><a href="tum-haberler.html">Haberler</a></li>
-                            <li><a href="#">Galeri</a></li>
-                            <li><a href="#">Kurumsal Kimlik</a></li>
+                            <li><a href="b2b-toplantı.html">B2B Toplantıları</a></li>
+                            <li><a href="ilham-alanları.html">İlham Alanları</a></li>
+                            <li><a href="dialogs.html">LESEXPO Dialogs</a></li>
+                            <li><a href="destekler.html">Destekler</a></li>
                         </ul>
                     </div>
                     <!-- <div class="footer-bottom">
