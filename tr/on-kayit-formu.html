@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-     <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-translate="title">LESEXPO</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <!-- Css -->
     <link rel="stylesheet" href="./assets/style.css">
-    <link rel="stylesheet" href="./assets/online-bilet.css">
+    <link rel="stylesheet" href="./assets/on-kayit-formu.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
@@ -446,59 +446,22 @@
                             <button type="button" class="btn btn-dark" id="addInternationalFair">Yeni Ekle</button>
                         </div>
                     </div>
-
-                    <!-- Certificates Section -->
-                    <div class="section-title mb-3">Sertifikalarınız Ve Ödülleriniz</div>
-                    <div id="certificatesContainer">
-                        <div class="form-row-container">
-                            <div class="row mb-4 certificate-row">
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <div class="file-upload">
-                                            <div class="file-select">
-                                                <div class="file-select-button" id="fileName">Dosya Seç</div>
-                                                <div class="file-select-name" id="noFile">Dosya seçilmedi</div>
-                                                <input type="file" name="chooseFile" id="chooseFile">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mb-4">
-                        <div class="col-12 text-end">
-                            <button type="button" class="btn btn-dark" id="addCertificate">Yeni Ekle</button>
-                        </div>
-                    </div>
-
                     <!-- Terms and Captcha -->
                     <div class="row mb-4">
                         <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="termsCheck" required>
-                                <label class="form-check-label" for="termsCheck">
+                            <div class="onay-kutusu-okf-1">
+                                <label>
+                                    <input type="checkbox" id="kabulEdiyorum">
                                     Aydınlatma Metni ve Kişisel Verilerin Kullanılması ve Korunması ile ilgili
                                     bilgilendirme yazısını okudum, kabul ediyorum.
                                 </label>
+
+                                <button class="btn-okf-1" onclick="butonKontrolOkf1()">Hemen Yerinizi Ayırtın</button>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row mb-4">
-                        <div class="col-md-6">
-                            <div class="captcha-container">
 
-
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="KODU GİRİNİZ" required>
-                                <button class="btn btn-primary" type="submit">Hemen Yerinizi Ayırtın</button>
-                            </div>
-                        </div>
-                    </div>
                 </form>
             </div>
         </div>

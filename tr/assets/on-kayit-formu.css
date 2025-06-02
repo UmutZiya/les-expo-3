@@ -60,6 +60,37 @@ label {
   margin-right: 5px;
 }
 
+ .onay-alani-okf-1 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .onay-alani-okf-1 input[type="checkbox"] {
+      accent-color: #0d6efd;
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    .btn-okf-1 {
+      padding: 12px 24px;
+      background-color: #0d6efd;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-okf-1:hover {
+      background-color: #0b5ed7;
+    }
+
+
 .radio-group {
   margin-top: 0.5rem;
 }

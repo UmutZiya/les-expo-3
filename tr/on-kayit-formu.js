@@ -239,11 +239,7 @@
             }
         });
 
-        // Dosya seçimi için
-        document.getElementById('chooseFile').addEventListener('change', function() {
-            const fileName = this.files[0] ? this.files[0].name : 'Dosya seçilmedi';
-            document.getElementById('noFile').textContent = fileName;
-        });
+        
 
         // Yeni Ekle butonları için fonksiyonlar
         document.addEventListener('DOMContentLoaded', function() {
@@ -321,39 +317,5 @@
                 newContainer.appendChild(createRemoveButton());
                 newContainer.appendChild(newRow);
                 internationalFairsContainer.appendChild(newContainer);
-            });
-
-            // Sertifikalar için
-            const addCertificateBtn = document.getElementById('addCertificate');
-            const certificatesContainer = document.getElementById('certificatesContainer');
-            let certificateCount = 1;
-
-            addCertificateBtn.addEventListener('click', function() {
-                const newContainer = document.createElement('div');
-                newContainer.className = 'form-row-container';
-                const newRow = document.querySelector('.certificate-row').cloneNode(true);
-                certificateCount++;
-                
-                // Yeni input ID'lerini güncelle
-                const inputs = newRow.querySelectorAll('input');
-                inputs.forEach(input => {
-                    const oldId = input.id;
-                    input.id = oldId + certificateCount;
-                    input.value = ''; // Değerleri temizle
-                });
-                
-                // Dosya seçimi için event listener ekle
-                const fileInput = newRow.querySelector('input[type="file"]');
-                const fileNameDisplay = newRow.querySelector('.file-select-name');
-                
-                fileInput.addEventListener('change', function() {
-                    const fileName = this.files[0] ? this.files[0].name : 'Dosya seçilmedi';
-                    fileNameDisplay.textContent = fileName;
-                });
-                
-                // Çarpı butonunu ekle
-                newContainer.appendChild(createRemoveButton());
-                newContainer.appendChild(newRow);
-                certificatesContainer.appendChild(newContainer);
             });
         });
