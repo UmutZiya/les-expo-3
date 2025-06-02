@@ -11,7 +11,7 @@
                 id: 2,
                 title: "LES-EXPO Logo",
                 format: "PNG",
-                imageUrl: "./images/sarı-lesexpo-tr.png" // Gerçek logo URL'si
+                imageUrl: "./images/lesexpologo-inter.png" // Gerçek logo URL'si
             },
             {
                 id: 3,
