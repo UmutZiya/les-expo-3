@@ -825,23 +825,18 @@ ul {
   padding: 40px 20px;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
 }
 
 /* Left Section */
 .footer-left {
   width: 25%;
   padding-right: 20px;
-  flex: 1;
-  align-items: flex-start;
 }
 
 .logo-footer img {
   height: 106px;
   margin-bottom: 5px;
 }
-
 
 .fuarcilik {
   display: block;
@@ -881,6 +876,7 @@ ul {
   margin-top: 25px;
   margin-bottom: 15px;
   font-weight: 500;
+  text-align: start;
 }
 
 /* Social Icons Footer */
@@ -914,8 +910,6 @@ ul {
   width: 75%;
   display: flex;
   flex-wrap: wrap;
-  flex: 3;
-  align-items: flex-start;
 }
 
 .footer-column {
@@ -929,7 +923,6 @@ ul {
   margin-bottom: 20px;
   font-size: 16px;
   font-weight: 500;
-  margin-top: 0;
 }
 
 .footer-column ul {
