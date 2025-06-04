@@ -9,7 +9,7 @@
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <!-- Css -->
     <link rel="stylesheet" href="./assets/style.css">
-    <link rel="stylesheet" href="./assets/blog-single-page.css">
+    <link rel="stylesheet" href="./assets/insights.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
@@ -17,7 +17,6 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="icon" type="image" href="./images/lesexpo-favicon.png">
-
     <style>
         .banner {
             position: relative;
@@ -30,6 +29,13 @@
             font-family: Arial, sans-serif;
             align-items: center;
             text-align: center;
+        }
+
+        .banner::before {
+            content: '';
+            background-color: rgba(0, 0, 0, 0.1);
+            /* parlaklık azaltıcı katman */
+            z-index: 1;
         }
 
         .banner-yazi {
@@ -47,7 +53,6 @@
 </head>
 
 <body>
-    <!-- Header Start -->
     <header class="main-header">
         <div class="container-navbar">
             <a href="index.html" class="logo mt-5">
@@ -83,20 +88,43 @@
                     </div>
                     <a href="online-bilet.html" class="trigger-button">Onlıne Bilet</a>
                     <a href="#" class="active" data-lang="tr" data-translate="lang.tr">TR</a> | <a
-                        href="../en/example-blog-1.html" class="" data-lang="en" data-translate="lang.en">EN</a>
+                        href="../en/les-insights.html" class="" data-lang="en" data-translate="lang.en">EN</a>
                 </div>
-                <!-- nav-toggle-button class'ı menüyü açar -->
-
+                <div class="mobile-actions">
+                    <button class="search-toggle-button" aria-label="Arama">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="mobile-menu-toggle nav-toggle-button"
+                        data-translate-aria-label="menu.toggleAriaLabel" aria-label="Menüyü Aç/Kapat">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </div>
-
-            <!-- Mobil için Hamburger İkonu (nav-toggle-button class'ı menüyü açar/kapatır) -->
-            <button class="mobile-menu-toggle nav-toggle-button" data-translate-aria-label="menu.toggleAriaLabel"
-                aria-label="Menüyü Aç/Kapat">
-                <i class="fas fa-bars"></i>
-            </button>
         </div>
     </header>
     <!-- Header End -->
+    <!-- Arama Çubuğu -->
+    <div class="search-overlay">
+        <div class="search-container">
+            <div class="search-content">
+                <input type="text" class="search-input" placeholder="Aramak istediğiniz kelimeyi yazınız...">
+                <button class="search-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Mobil Arama Çubuğu -->
+    <div class="search-overlay">
+        <div class="search-container">
+            <div class="search-content">
+                <input type="text" class="search-input" placeholder="Aramak istediğiniz kelimeyi yazınız...">
+                <button class="search-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </div>
     <!-- Tam Ekran Overlay Menü -->
     <div class="fullscreen-menu">
         <div class="menu-header">
@@ -104,16 +132,11 @@
                 <!-- Menüdeki logo -->
                 <img src="./images/lesexpologo-inter.png" alt="" class="fs-2">
             </a>
-            <div class="menu-search-container">
-                <input type="text" data-translate-placeholder="menu.searchPlaceholder"
-                    placeholder="aramak istediğiniz kelimeyi yazınız..." class="menu-search-input">
-                <button class="menu-search-button"><i class="fas fa-search"></i></button>
-            </div>
             <div class="menu-header-actions-fs">
                 <div class="lang-switch">
                     <a href="online-bilet.html" class="trigger-button">Online Bilet</a>
                     <a href="#" class="active" data-lang="tr" data-translate="lang.tr">TR</a> | <a
-                        href="../en/example-blog-1.html" class="" data-lang="en" data-translate="lang.en">EN</a>
+                        href="../en/les-insights.html" class="" data-lang="en" data-translate="lang.en">EN</a>
                 </div>
                 <button class="close-menu-btn" aria-label="Menüyü Kapat">
                     <i class="fas fa-times"></i>
@@ -178,7 +201,7 @@
 
         <div class="menu-footer">
             <!-- <span class="up-menu-f2f"> Powered By F2F Bilişim Reklam ve Danışmanlık Hizmetleri</span> -->
-            <span data-translate="menu.followUs">Bizi Takip Edin</span>
+            <span data-translate="menu.followUs">Follow</span>
             <div class="social-icons-menu">
                 <a href="https://www.facebook.com/lesexpofair" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://x.com/lesexpofair" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
@@ -193,147 +216,94 @@
     <div class="banner">
         <div class="banner-yazi">LES-EXPO</div>
         <div class="breadcrumb-1">
+            <a href="index.html">Ana Sayfa /</a>
+            <a href="b2b-toplantıları.html">B2B Toplantıları</a>
         </div>
 
-        <div class="container py-5">
-            <div class="breadcrumb justify-content-center mt-5">
-                <a href="index.html">Ana Sayfa</a> /
-                <a href="tum-haberler.html">Bloglar</a> /
-                <a href="ornek-blog-1.html">ESTA 2025 MÜKEMMELLİK ÖDÜLLERİ SAHİPLERİNİ BULDU!</a>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    <div class="news-container">
-
-                        <div class="news-content">
-                            <!-- Görsel Eklendi -->
-                            <h2 class="blog-first-title">ESTA 2025 MÜKEMMELLİK ÖDÜLLERİ SAHİPLERİNİ BULDU!
-                            </h2>
-                            <img src="./images/ESTAblog1.jpeg" alt="KFA Fuarcılık Uluslararası Fuar Katılımı"
-                                class="news-image">
-                            <h3 class="subtitle fw-bold"> YMB üyesi YILNAK Eğitim kategorisinde ödülün sahibi oldu.
-                            </h3>
-                            <p>Avrupa’nın en prestijli kaldırma ve ağır taşıma organizasyonlarından biri olan ESTA
-                                Mükemmellik Ödülleri-Awards of Excellence 2025, bu yıl 450 seçkin davetlinin katılımıyla
-                                Almanya Münih’te gerçekleşti. Toplam 9 kategoride ödüllerin verildiği etkinlikte,
-                                sektörde çığır açan projeler, yaratıcı çözümler ve güvenlik alanındaki öncü uygulamalar
-                                ödüller için kıyasıya yarıştı. Tüm finalist ve kazananları tebrik ediyor, yük
-                                mühendisliği hizmetlerine kattıkları değer için teşekkür ediyoruz!</p>
-
-                            <h3 class="subtitle"> İşte ESTA Mükemmellik Ödülleri-Awards of Excellence-2025 Kazananları:
-                            </h3>
-                            <ul class="list-2">
-                                <li>• Kafes Bomlu Vinçler: Sarens</li>
-                                <li>• Ağır Taşımacılık (Toplam Kütle ≤ 120 ton): <strong>OL-TRANS</strong></li>
-                                <li>• Ağır Taşımacılık (Toplam Kütle > 120 ton): <strong>Allelys</strong></li>
-                                <li>• Güvenlik Kategorisi: Liebherr Mobil ve Paletli Vinçler – <strong> Werk Ehingen
-                                        GmbH</li>
-                                <li>• İnovasyon Ödülü: Mammoet </strong></li>
-                                <li>•SPMT | SPT (Kendinden Yürüyen Modüler Taşıyıcılar): <strong> Wagenborg Nedlift</li>
-                                <li>• Eğitim Kategorisi: YILNAK </strong></li>
-                                <li><strong>Kazananlar:</strong> <a href="https://estaeurope.eu/2025-awards-winners/">
-                                        https://estaeurope.eu/2025-awards-winners/</a></li>
-                                <li><strong>Finalistler:</strong> <a
-                                        href="https://estaeurope.eu/awards/2025-awards-shortlist/">
-                                        https://estaeurope.eu/awards/2025-awards-shortlist</a></li>
+        <div class="container main-container">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-md-3 sidebar-container">
+                    <div class="sidebar">
+                        <div class="sidebar-sticky">
+                            <div class="sidebar-header p-3 mb-3 text-center">
+                                <h3 class="" data-translate="hakkimizda.sidebar.mainTitle">LESEXPO</h3>
+                                <p class="small mb-0" data-translate="hakkimizda.sidebar.subTitle">Insights
+                                </p>
+                            </div>
+                            <ul class="nav flex-column">
+                                <!-- Hakkımızda -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="collapse"
+                                        data-bs-target="#hakkimizdaSubmenu" aria-expanded="true">
+                                        <span class="menu-icon"><i class="fas fa-info-circle"></i></span>
+                                        <span data-translate="hakkimizda.sidebar.aboutUs">LES Insights:</span>
+                                    </a>
+                                    <div class="collapse show" id="hakkimizdaSubmenu">
+                                        <ul class="nav flex-column submenu">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="b2b-toplantıları.html">
+                                                    <i class="fas fa-angle-right me-2"></i>
+                                                    <span data-translate="hakkimizda.sidebar.bfmAbout">B2B
+                                                        Toplantıları</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link active" href="insights.html">
+                                                    <i class="fas fa-angle-right me-2"></i>
+                                                    <span data-translate="hakkimizda.sidebar.presidentMessage">LES
+                                                        Insights</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="experience.html">
+                                                    <i class="fas fa-angle-right me-2"></i>
+                                                    <span data-translate="hakkimizda.sidebar.qualityPolicy">LES
+                                                        Experiences</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
                             </ul>
-
-
-
-                            <!-- Eğer önemli bir kısım varsa highlight section kısmına yazılabilir -->
-                            <!-- <div class="highlight-section">
-                            <h3 class="subtitle mb-3">"İhracat Odaklı Büyüme Hedeflerine Katkımızı Sürdüreceğiz"</h3>
-                            <p class="mb-0">BTSO Yönetim Kurulu Başkanı <strong>İbrahim Burkay</strong>, Türkiye'nin
-                                büyüme ve kalkınma hedeflerinde ihracatçıların önemli bir rol üstlendiğini söyledi.
-                                BTSO'nun kentin dış ticaretine rehberlik eden birçok projeyi hayata geçirdiğini belirten
-                                Başkan Burkay, KFA Fuarcılık A.Ş. firmasının organizasyon becerisiyle milli katılım
-                                düzenleme yetkisine sahip olduğunu ifade etti.</p>
-                        </div> -->
                         </div>
                     </div>
+                </div>
+                <!-- Main content -->
+                <div class="content-area">
+                    <section class="pharmaist-section">
+                        <div class="pharmaist-text">
+                            <h2 class="fw-bold fs-1">LES Insights:</h2>
+                            <h4>LES-EXPO 2025 İstanbul: Dünyanın Yükünü Tasarlayan, Kaldıran, Taşıyan ve Taşıtanların
+                                Buluşması! </h4>
+                            <p class="light p-0">Yük mühendisliğinin geleceğini LES Insights’ta konuşuyoruz!</p>
+                            <p>
+                                <strong>LES Insights</strong>, yük mühendisliği hizmetlerini bağımsız ve multidisipliner
+                                bir disiplin
+                                olarak tanıtan profesyonel bir platform. Dialogues ve Spotlights oturumlarıyla, sektörün
+                                en iyi uygulamalarını, yenilikçi teknolojilerini ve sürdürülebilirlik odaklı başarı
+                                hikayelerini paylaşıyoruz.
+                            </p>
+                            <ul>
+                                <li> <strong>Dialogues:</strong> Sektörün paydaşlarını bir araya getiren interaktif
+                                    tartışmalar.</li>
+                                <li><strong>Spotlights:</strong> İlham verici projeler ve uzmanlık hikayeleri.</li>
+                            </ul>
+                            <p>
+                                Genç mühendislerden sektör liderlerine, herkes için bilgi, bağlantı ve ilham kaynağı
+                                olan LES Insights, yakında açıklanacak programıyla yük mühendisliği hizmetlerinin
+                                geleceğini şekillendirecek. Güncel program için <a href="#" class="link">Link</a>
+                            </p>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
+        <!-- Sidebar mobile toggle button -->
+        <button class="sidebar-toggle-button d-md-none">
+            <i class="fas fa-bars"></i>
+        </button>
 
-        <!-- Haberler Card Section -->
-
-        <div class="container-haberler">
-            <div class="header-haberler">
-                <h2><i class="fas fa-arrow-right"></i>DİĞER HABERLER</h2>
-                <div class="header-right">
-                    <a href="tum-haberler.html" class="all-news">TÜM HABERLER</a>
-                </div>
-            </div>
-
-            <div class="slider-container-haberler">
-                <div class="slider-haberler" id="slider-haberler">
-                    <!-- Card 1 -->
-                    <div class="card-haberler">
-                        <div class="card-image-haberler">
-                            <img src="./images/haberler-1.jpeg" alt="IDEX İstanbul Etkinliği">
-                            <div class="card-date-haberler">
-                                <i class="far fa-calendar-alt"></i> 05 Mayıs 2025
-                            </div>
-                        </div>
-                        <div class="card-content-haberler">
-                            <h3 class="card-title-haberler">BTSO Başkanı İbrahim Burkay, Yük Mühendisliği Birliği ile
-                                İftar Programında
-                                Buluştu</h3>
-                            <a href="#" class="read-more-haberler">Devamını Oku <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="card-haberler">
-                        <div class="card-image-haberler">
-                            <img src="./images/haberler-2.jpeg" alt="Dental Sektör Etkinliği">
-                            <div class="card-date-haberler">
-                                <i class="far fa-calendar-alt"></i> 04 Mayıs 2025
-                            </div>
-                        </div>
-                        <div class="card-content-haberler">
-                            <h3 class="card-title-haberler">Sistem Vinç, 700 ton kaldırma kapasiteli Demag AC 700 mobil
-                                vinci ile
-                                Gebze'den Dilovası'na 155 ton ağırlığındaki trafonun tüm taşıma ve tahliye sürecini
-                                başarıyla tamamladı.
-                            </h3>
-                            <a href="#" class="read-more-haberler">Devamını Oku <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="card-haberler">
-                        <div class="card-image-haberler">
-                            <img src="./images/haberler-3.jpg" alt="Diş Hekimliği Etkinliği">
-                            <div class="card-date-haberler">
-                                <i class="far fa-calendar-alt"></i> 02 Mayıs 2025
-                            </div>
-                        </div>
-                        <div class="card-content-haberler">
-                            <h3 class="card-title-haberler">Yük mühendisliği şirketlerine de ulaşılabilir yatırım
-                                kredisi verilmeli</h3>
-                            <a href="#" class="read-more-haberler">Devamını Oku <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Card 6 (Extra card for continuous scrolling effect) -->
-                    <div class="card-haberler">
-                        <div class="card-image-haberler">
-                            <img src="./images/haberler-6.jpeg" alt="Dental Konferans">
-                            <div class="card-date-haberler">
-                                <i class="far fa-calendar-alt"></i> 15 Nisan 2025
-                            </div>
-                        </div>
-                        <div class="card-content-haberler">
-                            <h3 class="card-title-haberler">SANY, Dünyanın En Büyük Arazi Vinci ile Ağır Kaldırmayı
-                                Yeniden Tanımlıyor
-                            </h3>
-                            <a href="#" class="read-more-haberler">Devamını Oku <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- Logo Slider -->
         <div class="container-fluid logo-slider">
             <div class="logo-slider-container">
@@ -458,9 +428,7 @@
             </div>
         </footer>
 
-
         <script>
-
 
 
         </script>
@@ -476,7 +444,6 @@
         <!-- Custom Scripts -->
         <script src="hakkimizda.js"></script>
         <script src="main.js"></script>
-
 
 </body>
 
